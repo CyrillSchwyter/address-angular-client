@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Address} from './Address';
+import {AddressService} from './AddressService';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'address';
+  title: string;
+
+
+  constructor() {
+    this.title = 'Address';
+  }
 }

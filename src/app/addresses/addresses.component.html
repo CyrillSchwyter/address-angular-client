@@ -1,0 +1,18 @@
+<button class="new" (click)="newAddress()">New</button>
+<div class="body">
+  <div class="list">
+    <ul class="heroes">
+      <li *ngFor="let address of addresses"
+          [class.selected]="address === selectedAddress"
+          (click)="onSelect(address)">
+        <span class="badge">{{address.id}}</span> {{address.name}}
+        <div class="delete">
+          <button (click)="deleteAddress(address.id)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+<!--  <div class="detail">-->
+    <app-addresse-detail class="detail" [address]="selectedAddress" (saved)="onSaved($event)"></app-addresse-detail>
+<!--  </div>-->
+</div>

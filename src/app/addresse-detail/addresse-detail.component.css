@@ -1,0 +1,12 @@
+label {
+  /*border: #039be5 solid 2px;*/
+  display: block;
+
+}
+
+button {
+  display: block;
+  right: 2px;
+  position: relative;
+  width: 10em;
+}

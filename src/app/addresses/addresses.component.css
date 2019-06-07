@@ -1,0 +1,103 @@
+/* HeroesComponent's private CSS styles */
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 20em;
+}
+
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.heroes li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+div.delete {
+  display: inline-block;
+  position: absolute;
+  right: 2px;
+}
+
+div.delete button{
+  position: absolute;
+  right: 2px;
+  background-color: #607D8B;
+  border-radius: 20px;
+  color: white;
+}
+
+.detail {
+  width: 20%;
+  display: inline-block;
+  /*border: green solid 2px;*/
+  position: fixed;
+  top: 180px;
+}
+
+.body {
+  /*border: red solid 2px;*/
+}
+
+.list {
+  width: 40%;
+  display: inline-block;
+  /*border: coral solid 2px;*/
+  float: left;
+  top: 60px;
+
+
+}
+
+new {
+  width: 10em;
+  margin-right: .8em;
+  background-color: darkseagreen;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

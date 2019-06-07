@@ -19,8 +19,18 @@ export class AddresseDetailComponent implements OnInit {
   }
 
   save(address: Address) {
-    this.addressService.save(address).subscribe((saved) =>
-      this.saved.emit(saved)
-    );
+
+    if (address.id == null) {
+
+      this.addressService.create(address).subscribe((saved) =>
+        this.saved.emit(saved)
+      );
+
+    } else {
+      this.addressService.update(address).subscribe((saved) =>
+        this.saved.emit(saved)
+      );
+
+    }
   }
 }

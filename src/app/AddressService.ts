@@ -1,13 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Address} from './Address';
 
-const endpoint = 'http://localhost:8080/addresses/';
-const httpOptions = {
-  headers: new HttpHeaders({
-    accept: 'application/json',
-  })
-};
+const endpoint = 'http://localhost:8088/addresses/';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +19,18 @@ export class AddressService {
     return this.http.get<Address[]>(endpoint);
   }
 
-  public getTest() {
-    return this.http.get<string>(endpoint + 'test').subscribe(value => console.log(value));
-  }
-
   delete(id: number) {
     const url = `${endpoint}${id}`;
     return this.http.delete(url).pipe();
   }
 
-  save(address: Address) {
-    return this.http.put<Address>(endpoint, address);
+  create(address: Address) {
+    return this.http.post<Address>(endpoint, address);
+  }
+
+  update(address: Address) {
+    const url = `${endpoint}${address.id}`;
+    return this.http.put<Address>(url, address);
+
   }
 }

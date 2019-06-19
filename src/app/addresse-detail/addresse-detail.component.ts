@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Address} from '../Address';
-import {AddressService} from '../AddressService';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-addresse-detail',
@@ -10,27 +8,17 @@ import {Router} from '@angular/router';
 })
 export class AddresseDetailComponent implements OnInit {
   @Input() address: Address;
-  @Output() saved = new EventEmitter<Address>();
+  @Output() save = new EventEmitter<Address>();
 
-  constructor(private addressService: AddressService, private  router: Router) {
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  save(address: Address) {
+  onSave(address: Address) {
 
-    if (address.id == null) {
-
-      this.addressService.create(address).subscribe((saved) =>
-        this.saved.emit(saved)
-      );
-
-    } else {
-      this.addressService.update(address).subscribe((saved) =>
-        this.saved.emit(saved)
-      );
-
-    }
+    this.save.emit(address);
   }
+
 }

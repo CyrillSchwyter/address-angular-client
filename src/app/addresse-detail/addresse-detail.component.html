@@ -1,14 +1,14 @@
 <div *ngIf="address">
   <div class>
     <label>Vorname:</label>
-      <input [(ngModel)]="address.surname" placeholder="Vorname"/>
+    <input [(ngModel)]="address.surname" placeholder="Vorname"/>
     <label>Name:</label>
-      <input [(ngModel)]="address.name" placeholder="name"/>
+    <input [(ngModel)]="address.name" placeholder="name"/>
     <label>PLZ:</label>
-      <input [(ngModel)]="address.zip" placeholder="PLZ"/>
+    <input [(ngModel)]="address.zip" placeholder="PLZ"/>
     <label>Ort:</label>
-      <input [(ngModel)]="address.city" placeholder="Ort"/>
-    <button (click)="save(address)">Save</button>
+    <input [(ngModel)]="address.city" placeholder="Ort"/>
+    <button (click)="onSave(address)">Save</button>
   </div>
 
 </div>

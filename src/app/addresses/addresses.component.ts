@@ -34,7 +34,22 @@ export class AddressesComponent implements OnInit {
     this.selectedAddress = address;
   }
 
-  onSaved(address: Address) {
+  save(address: Address) {
+
+    if (address.id == null) {
+
+      this.addressService.create(address).subscribe((saved) =>
+        this.setCurrendAddress(saved)
+      );
+
+    } else {
+      this.addressService.update(address).subscribe((saved) =>
+        this.setCurrendAddress(saved)
+      );
+
+    }
+
+
     this.selectedAddress = address;
     this.getAddresses();
   }
@@ -60,4 +75,9 @@ export class AddressesComponent implements OnInit {
 
   }
 
+  private setCurrendAddress(saved: Address) {
+    this.selectedAddress = saved;
+    this.fillModel();
+
+  }
 }

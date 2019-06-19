@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Address} from './Address';
-import {AddressService} from './AddressService';
 
 @Component({
   selector: 'app-root',
